@@ -17,11 +17,21 @@
             console.log('Perdimos comunicación con el servidor');
         }) 
 
-        socket.emit('mensaje',{nombre: 'Marcos'})
+        // socket.emit('mensaje',{nombre: 'Marcos'})
 
 
         socket.on('mensaje', (payload) => {
             console.log('escuchando:',payload);
+        })
+
+        socket.on('nuevo-mensaje', (payload) => {
+            console.log('escuchando:',payload);
+        })
+
+
+        socket.on('active-bands', (payload) => {
+            console.clear();
+            console.table(payload);
         })
     </script>
 </body>
